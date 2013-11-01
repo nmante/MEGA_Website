@@ -1,0 +1,31 @@
+<header class="jumbotron jumbotron-bg">
+  
+  <div class="container" >
+    <h1>Minority Engineering Graduate Association</h1>
+    <p>
+      Empowering the Environment.
+    </p>
+    
+  </div>
+</header>
+<div class="row">
+  <div class="col-lg-4">
+  </div>
+  <div class="col-lg-4" style="text-align:center;">
+    <img id="logo" src="assets/img/megalogo.png">
+  </div>
+  <div class="col-lg-4">
+  </div>
+</div>
+<div class="row-fluid">
+  <div ng-repeat="section in sections" class="col-lg-4">
+    <ul>
+      <h3>{{section.title}}</h3>
+      <li>
+        <p>{{section.story}}</p>
+      </li>
+    </ul>
+  </div>
+</div>
+
+

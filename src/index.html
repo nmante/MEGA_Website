@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html ng-app="megaApp" ng-controller="AppCtrl">
+  <head>
+    <title ng-bind="pageTitle"></title>
+
+    <!-- social media tags -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@uscmega">
+    <meta name="twitter:title" content="USC MEGA">
+    <meta name="twitter:description" content="The official website for the Minority Engineering Graduate Association at USC.">
+    <meta name="twitter:creator" content="@niimante">
+    <meta name="twitter:image:src" content="assets/megalogo.png">
+    <meta property="og:title" content="USC MEGA" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="bit.ly/1bu1UN2" />
+    <meta property="og:image" content="assets/megalogo.png" />
+    <meta property="og:description" content="The official website for the Minority Engineering Graduate Association at USC.">
+
+    <!-- font awesome from BootstrapCDN -->
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
+
+    <!-- compiled CSS --><% styles.forEach( function ( file ) { %>
+    <link rel="stylesheet" type="text/css" href="<%= file %>" /><% }); %>
+
+    <!-- compiled JavaScript --><% scripts.forEach( function ( file ) { %>
+    <script type="text/javascript" src="<%= file %>"></script><% }); %>
+
+    <!-- it's stupid to have to load it here, but this is for the +1 button -->
+    <script type="text/javascript" src="https://apis.google.com/js/plusone.js">
+      { "parsetags": "explicit" }
+    </script>
+
+    <!-- Required CSS for allowing UI Bootstrap to work properly -->
+    <style type="text/css">
+      .nav, .pagination, .carousel a { 
+        cursor: pointer; 
+      }
+    </style>
+  </head>
+  <body>
+    <div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a ui-route="/home" href="#/home" ng-class="{active:$uiRoute}" class="navbar-brand">MEGA</a>
+          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="navbar-collapse collapse" id="navbar-main">
+
+          <ul class="nav navbar-nav">
+            <li ui-route="/home" ng-class="{active:$uiRoute}">
+              <a href="#/home">
+                <i class="icon-home"></i>
+                Home
+              </a>
+            </li>
+            <li ui-route="/careers" ng-class="{active:$uiRoute}">
+              <a href="#/careers">
+                <i class="icon-briefcase"></i>
+                Careers
+              </a>
+            </li>
+            <li ui-route="/community" ng-class="{active:$uiRoute}">
+              <a href="#/community">
+                <i class="icon-globe"></i>
+                Community
+              </a>
+            </li>
+            <li ui-route="/eboard" ng-class="{active:$uiRoute}">
+              <a href="#/eboard">
+                <i class="icon-group"></i>
+                Executive Board
+              </a>
+            </li>
+          </ul>
+
+          <ul class="nav navbar-nav navbar-right">
+            <li ui-route="/member" ng-class="{active:$uiRoute}">
+              <a href="#/member">
+                <i class="icon-file-text"></i>
+                Membership</a>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+    </div>
+    <div ui-view="main"></div>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-inner">
+          <ul class="social">
+            
+            <li><a target="_blank" href="http://twitter.com/uscmega"><i class="icon-twitter-sign"></i></a></li>
+            <li><a target="_blank" href="http://facebook.com/uscmega"><i class="icon-facebook-sign"></i></a></li>
+          </ul>
+          <p>
+            (c) 2013 Nii Mante. 
+          </p>
+        </div>
+      </div>
+    </footer>
+
+
+  </body>
+</html>
