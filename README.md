@@ -24,20 +24,20 @@ ngBoilerplate incorporates AngularJS, Grunt, Karma, Bower seemlessly for those d
 
 The directory structure will be modularized via features.  As such the directory structure of the Website source code will look like:
 
-    ng-boilerplate/
-    |- grunt-tasks/
-    |- karma/
-    |- src/
-    |- vendor/
-    |- build/
-    |- bin/
-    |- .bowerrc
-    |- bower.json
-    |- build.config.js
-    |- Gruntfile.js
-    |- module.prefix
-    |- module.suffix
-    |- package.json
+    MEGA_Website/
+        |- grunt/
+        |- karma/
+        |- src/
+        |- vendor/
+        |- build/
+        |- bin/
+        |- .bowerrc
+        |- bower.json
+        |- build.config.js
+        |- Gruntfile.js
+        |- module.prefix
+        |- module.suffix
+        |- package.json
    
 ###<div id="automated_grunt">1.1 Automated Tasks with Grunt - The Friendly Task Runner</div>
 
