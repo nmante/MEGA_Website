@@ -12,7 +12,7 @@ The repo for the Minority Engineering Graduate Association Website.
 
 ##<div id="infrastructure">Infrastructure</div>
 
-The website will be built using an 'ngBoilerplate' philosophy.  I wanted to write a website that would allow for:
+The website will be built using an ['ngBoilerplate'](http://joshdmiller.github.io/ng-boilerplate/#/home) philosophy.  I wanted to write a website that would allow for:
 
 - Automated testing
   - Behavior Driven Development
