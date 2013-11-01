@@ -59,21 +59,21 @@ When I've written all of the html, templates, css/less and I want to push to the
   | | |- *.css
   | | |- *.js
 
-The contents of the `bin` directory will rest in the `public_html` on the server for example.
+The contents of the `bin` directory will reside in the `public_html` on the server for example.
 
 ###<div id="code_structure">1.2 My Code Structure</div>
 
 The source is where MEGA code (html, js, less, css).  The structure below is fairly self explanatory, but for clarity, the 'app' dir will contain all of my code.   
   
-   |- src/
-   |  |- app/
-   |  |  |- <app logic>
-   |  |- assets/
-   |  |  |- <static files>
-   |  |- common/
-   |  |  |- <reusable code>
-   |  |- less/
-   |  |  |- main.less
+  |- src/
+  |  |- app/
+  |  |  |- <app logic>
+  |  |- assets/
+  |  |  |- <static files>
+  |  |- common/
+  |  |  |- <reusable code>
+  |  |- less/
+  |  |  |- main.less
 
 The `<app logic>` will contain sub folders which correlate to features.  For example, one feature might be an 'about' page on the website. The directory would then look like so:
 
@@ -89,16 +89,18 @@ In a nutshell, our Angular logic for the about page is located in `about.js`, an
 
 [Bower](http://bower.io), the package manager built by Twitter, is what I'll be using to manage my dependencies.  These dependencies include AngularJS, AngularUI, to name a few.
 
-   |- vendor/
-   |  |- angular-bootstrap/
-   |  |- bootstrap/
-   |  |- placeholders/
+
+  |- vendor/
+  |  |- angular-bootstrap/
+  |  |- bootstrap/
+  |  |- placeholders/
    
 
 ##<div id="website_structure">2 Website Structure</div> 
 
 Website structure will look like this:
 
+  
   www-scf.usc.edu/~uscmega
     /home "Home"
     /careers "Careers"
