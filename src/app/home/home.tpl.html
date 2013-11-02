@@ -8,24 +8,53 @@
     
   </div>
 </header>
-<div class="row">
-  <div class="col-lg-4">
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4">
+    </div>
+    <div class="col-lg-4" style="text-align:center;">
+      <img id="logo" src="assets/img/megalogo.png">
+    </div>
+    <div class="col-lg-4">
+    </div>
   </div>
-  <div class="col-lg-4" style="text-align:center;">
-    <img id="logo" src="assets/img/megalogo.png">
-  </div>
-  <div class="col-lg-4">
+  <div class="row-fluid">
+    <div class="col-lg-4 col-sm-4 col-md-4">
+      <ul>
+        <h2>{{mission.title}}</h2>
+        <li>
+          <p class="fulljusttify">{{mission.story}}</p>
+        </li>
+      </ul>
+    </div>
+    <div class="col-lg-4 col-sm-4 col-md-4">
+      <ul>
+        <h2>Benefits</h2>
+        <li>
+          <p><b><i>MEGA</i></b> provides an opportunity to interact with other Minority Groups like: 
+            <ul>
+              <li ng-repeat="society in societies">
+                <a href="{{society.link}}">{{society.name}}</a>
+              </li>
+              <li>... And many more!!</li>
+            </ul>
+          </p>
+        </li>
+        <li ng-repeat="benefit in benefits">
+          <p>{{benefit}}</p>
+        </li>
+      </ul>
+    </div>
+    <div class="col-lg-4 col-sm-4 col-md-4">
+      <ul>
+        <h2>The last one</h2>
+        <li>
+          <p>
+            And a bullet point
+          </p>
+        </li>
+      </ul>
+    </div>
   </div>
 </div>
-<div class="row-fluid">
-  <div ng-repeat="section in sections" class="col-lg-4">
-    <ul>
-      <h3>{{section.title}}</h3>
-      <li>
-        <p>{{section.story}}</p>
-      </li>
-    </ul>
-  </div>
-</div>
-
 

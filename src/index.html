@@ -19,7 +19,7 @@
     <!-- font awesome from BootstrapCDN -->
     <link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
 
-    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/simplex/bootstrap.css">
 
     <!-- compiled CSS --><% styles.forEach( function ( file ) { %>
     <link rel="stylesheet" type="text/css" href="<%= file %>" /><% }); %>
@@ -40,7 +40,7 @@
     </style>
   </head>
   <body>
-    <div class="navbar navbar-default navbar-fixed-top">
+    <div class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
           <a ui-route="/home" href="#/home" ng-class="{active:$uiRoute}" class="navbar-brand">MEGA</a>
@@ -92,20 +92,27 @@
     </div>
     <div ui-view="main"></div>
 
-    <footer class="footer">
+    <footer>
       <div class="container">
-        <div class="footer-inner">
-          <ul class="social">
-            
-            <li><a target="_blank" href="http://twitter.com/uscmega"><i class="icon-twitter-sign"></i></a></li>
-            <li><a target="_blank" href="http://facebook.com/uscmega"><i class="icon-facebook-sign"></i></a></li>
-          </ul>
-          <p>
-            (c) 2013 Nii Mante. 
-          </p>
+      
+        <div class="row">
+          <div class="col-lg-12">
+            <ul style="list-unstyled">
+              <li ng-repeat="social in socials">
+                <a href="{{social.link}}">
+                  <i class="{{social.icon}}"></i>
+                  {{social.name}}
+                </a>
+              </li>
+            </ul>
+            <p>
+              (c) 2013 Nii Mante. 
+            </p>
+          </div>
         </div>
-      </div>
-    </footer>
+     
+    </div>
+     </footer>
 
 
   </body>

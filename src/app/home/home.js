@@ -46,18 +46,52 @@ angular.module( 'megaApp.home', [
     slides.push('assets/img/img'+ i + '.png');  
   }
 
+  $scope.mission = {
+    "title" : "Mission",
+    "story" : "MEGA serves to unite minority graduate engineering students and provide them with an environment to enhance their academic, professional, and social involvement."
+
+  };
+
+  $scope.benefits = [
+    "Social events to meet your fellow peers in engineering",
+    "Professional events to network with employers and alumni",
+    "FREE membership"
+  ];
+
+  $scope.societies = [
+    {
+      "name" : "NSBE",
+      "link" : "http://www-scf.usc.edu/~nsbe/"
+    },
+    {
+      "name" : "SHPE",
+      "link" : "http://viterbistudents.usc.edu/shpe/"
+    },
+    {
+      "name" : "SWE",
+      "link" : "http://www.sweusc.com"
+    },
+    {
+      "name" : "BGSN",
+      "link" : "http://www-scf.usc.edu/~nsbe/"
+    }
+  ];
+
+
+
+
   $scope.sections = [
     {
-      "title" : "Benefits",
-      "story" : "Lorem ipsum frafha fadfhkdan fadkfkalndf kalfhdknafaf faifndkaj aodfnaudnf aiofdnadf nfnuenfjaf iuafnaoejnf aifanfnfeon"
+      "title" : "Mission",
+      "story" : "MEGA serves to unite minority graduate engineering students and provide them with an environment to enhance their academic, professional, and social involvement."
     },
     {
       "title" : "Benefits",
-      "story" : "Lorem ipsum frafha fadfhkdan fadkfkalndf kalfhdknafaf faifndkaj aodfnaudnf aiofdnadf nfnuenfjaf iuafnaoejnf aifanfnfeon"
+      "story" : "- MEGA provides an opportunity to interact with other minority graduate groups.\n- Events are geared towards <b><i>Graduate<i><b> students\n- We provide you with an alumni and professional network\n- It's <b><i>Free<i><b> to join!"
     },
     {
-      "title" : "Benefits",
-      "story" : "Lorem ipsum frafha fadfhkdan fadkfkalndf kalfhdknafaf faifndkaj aodfnaudnf aiofdnadf nfnuenfjaf iuafnaoejnf aifanfnfeon"
+      "title" : "Contact",
+      "story" : "President"
     }
   ];
   
