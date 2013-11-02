@@ -19,6 +19,19 @@ angular.module( 'megaApp', [
       $scope.pageTitle = toState.data.pageTitle + ' | MEGA' ;
     }
   });
+
+  $scope.socials = [
+    {
+      "name" : "Facebook",
+      "link" : "http://facebook.com/uscmega",
+      "icon" : "icon-facebook"
+    },
+    {
+      "name" : "Twitter",
+      "link" : "http://twitter.com/uscmega",
+      "icon" : "icon-twitter"
+    }
+  ];
 })
 
 ;

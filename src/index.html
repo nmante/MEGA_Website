@@ -92,16 +92,15 @@
     </div>
     <div ui-view="main"></div>
 
-    <footer>
+    <footer class="footer">
       <div class="container">
       
-        <div class="row">
+        <div class="footer-inner">
           <div class="col-lg-12">
-            <ul style="list-unstyled">
+            <ul class="social">
               <li ng-repeat="social in socials">
                 <a href="{{social.link}}">
                   <i class="{{social.icon}}"></i>
-                  {{social.name}}
                 </a>
               </li>
             </ul>
@@ -110,9 +109,8 @@
             </p>
           </div>
         </div>
-     
-    </div>
-     </footer>
+      </div>
+    </footer>
 
 
   </body>
