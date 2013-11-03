@@ -66,9 +66,15 @@ module.exports = {
       'vendor/angular-bootstrap/ui-bootstrap-tpls.min.js',
       'vendor/placeholders/angular-placeholders-0.0.1-SNAPSHOT.min.js',
       'vendor/angular-ui-router/release/angular-ui-router.js',
-      'vendor/angular-ui-utils/modules/route/route.js'
+      'vendor/angular-ui-utils/modules/route/route.js',
+      'vendor/jquery/jquery.min.js',
+      'vendor/nivo-slider/jquery.nivo.slider.js'
     ],
     css: [
+      'vendor/nivo-slider/nivo-slider.css',
+      'vendor/themes/light/light.css',
+      'vendor/themes/dark/dark.css',
+      'vendor/themes/bar/bar.css',
     ],
     assets: [
     ]

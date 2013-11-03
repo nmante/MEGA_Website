@@ -13,9 +13,9 @@
  * specified, as shown below.
  */
 angular.module( 'megaApp.home', [
-  'ui.state',
-  'ui.bootstrap',
-  'plusOne'
+    'ui.state',
+    'ui.bootstrap',
+    'plusOne'
 ])
 
 /**
@@ -24,78 +24,87 @@ angular.module( 'megaApp.home', [
  * this way makes each module more "self-contained".
  */
 .config(function config( $stateProvider ) {
-  $stateProvider.state( 'home', {
-    url: '/home',
-    views: {
-      "main": {
-        controller: 'HomeCtrl',
-        templateUrl: 'home/home.tpl.html'
-      }
-    },
-    data:{ pageTitle: 'Home' }
-  });
+    $stateProvider.state( 'home', {
+        url: '/home',
+        views: {
+            "main": {
+                controller: 'HomeCtrl',
+                templateUrl: 'home/home.tpl.html'
+            }
+        },
+        data:{ pageTitle: 'Home' }
+    });
 })
 
 /**
- * And of course we define a controller for our route.
- */
-.controller( 'HomeCtrl', function HomeController( $scope ) {
-  $scope.slideDuration = 5000;
-  var slides = $scope.slides = [];
-  for (var i = 2; i >= 1; i--) {
-    slides.push('assets/img/img'+ i + '.png');  
-  }
+* And of course we define a controller for our route.
+*/
+.controller( 'HomeCtrl', function HomeController( $scope, $http) {
+    /*
+    We are going to set up our http requests here
+    */
+    var url = 'assets/data/home/home.json';
+    var successCallback = function (data){
+        $scope.mission = response.mission;
+    };
+    /*
+        Can't do XHR requests to local file, so we'll need to be running
+        a server for that
+    */
+    // $http.get(url).success(successCallback).error();
+    
+    $scope.slideDuration = 5000;
+    var slides = $scope.slides = [];
+    for (var i = 2; i >= 1; i--) {
+        slides.push('assets/img/img'+ i + '.png');  
+    }
 
-  $scope.mission = {
-    "title" : "Mission",
-    "story" : "MEGA serves to unite minority graduate engineering students and provide them with an environment to enhance their academic, professional, and social involvement."
+    $scope.mission = {
+        "title" : "Mission",
+        "story" : "MEGA serves to unite minority graduate engineering students and provide them with an environment to enhance their academic, professional, and social involvement."
 
-  };
+    };
 
-  $scope.benefits = [
+    $scope.benefits = [
     "Social events to meet your fellow peers in engineering",
     "Professional events to network with employers and alumni",
     "FREE membership"
-  ];
+    ];
 
-  $scope.societies = [
+    $scope.societies = [
     {
-      "name" : "NSBE",
-      "link" : "http://www-scf.usc.edu/~nsbe/"
+        "name" : "NSBE",
+        "link" : "http://www-scf.usc.edu/~nsbe/"
     },
     {
-      "name" : "SHPE",
-      "link" : "http://viterbistudents.usc.edu/shpe/"
+        "name" : "SHPE",
+        "link" : "http://viterbistudents.usc.edu/shpe/"
     },
     {
-      "name" : "SWE",
-      "link" : "http://www.sweusc.com"
+        "name" : "SWE",
+        "link" : "http://www.sweusc.com"
     },
     {
-      "name" : "BGSN",
-      "link" : "http://www-scf.usc.edu/~nsbe/"
+        "name" : "BGSN",
+        "link" : "http://www-scf.usc.edu/~nsbe/"
     }
-  ];
+    ];
 
 
-
-
-  $scope.sections = [
+    $scope.sections = [
     {
-      "title" : "Mission",
-      "story" : "MEGA serves to unite minority graduate engineering students and provide them with an environment to enhance their academic, professional, and social involvement."
+        "title" : "Mission",
+        "story" : "MEGA serves to unite minority graduate engineering students and provide them with an environment to enhance their academic, professional, and social involvement."
     },
     {
-      "title" : "Benefits",
-      "story" : "- MEGA provides an opportunity to interact with other minority graduate groups.\n- Events are geared towards <b><i>Graduate<i><b> students\n- We provide you with an alumni and professional network\n- It's <b><i>Free<i><b> to join!"
+        "title" : "Benefits",
+        "story" : "- MEGA provides an opportunity to interact with other minority graduate groups.\n- Events are geared towards <b><i>Graduate<i><b> students\n- We provide you with an alumni and professional network\n- It's <b><i>Free<i><b> to join!"
     },
     {
-      "title" : "Contact",
-      "story" : "President"
+        "title" : "Contact",
+        "story" : "President"
     }
-  ];
-  
-})
+    ];
 
-;
+});
 

@@ -1,5 +1,18 @@
 <header class="jumbotron jumbotron-bg">
-  
+  <div id="wrapper">
+        <div class="slider-wrapper theme-default">
+            <div id="slider" class="nivoSlider">
+                <img src="assets/img/toystory.jpg" data-thumb="assets/img/toystory.jpg" alt="" />
+                <a href="http://dev7studios.com"><img src="assets/img/up.jpg" data-thumb="assets/img/up.jpg" alt="" title="This is an example of a caption" /></a>
+                <img src="assets/img/walle.jpg" data-thumb="assets/img/walle.jpg" alt="" data-transition="slideInLeft" />
+                <img src="assets/img/nemo.jpg" data-thumb="assets/img/nemo.jpg" alt="" title="#htmlcaption" />
+            </div>
+            <div id="htmlcaption" class="nivo-html-caption">
+                <strong>This</strong> is an example of a <em>HTML</em> caption with <a href="#">a link</a>. 
+            </div>
+        </div>
+
+    </div>
   <div class="container" >
     <h1>Minority Engineering Graduate Association</h1>
     <p>
@@ -40,9 +53,9 @@
             </ul>
           </p>
         </li>
-        <li ng-repeat="benefit in benefits">
-          <p>{{benefit}}</p>
-        </li>
+        <p ng-repeat="benefit in benefits">
+          {{benefit}}
+        </p>
       </ul>
     </div>
     <div class="col-lg-4 col-sm-4 col-md-4 section">
