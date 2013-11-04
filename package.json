@@ -1,6 +1,9 @@
 {
   "author": "Nii Mante",
   "name": "mega-webapp",
+  "licenses":{
+     "type": "MIT"
+  },
   "version": "0.0.1",
   "homepage": "http://www-scf.usc.edu/~uscmega",
   "dependencies": {},

@@ -2,17 +2,11 @@
   <div id="wrapper">
         <div class="slider-wrapper theme-default">
             <div id="slider" class="nivoSlider">
-                <img src="assets/img/toystory.jpg" data-thumb="assets/img/toystory.jpg" alt="" />
-                <a href="http://dev7studios.com"><img src="assets/img/up.jpg" data-thumb="assets/img/up.jpg" alt="" title="This is an example of a caption" /></a>
-                <img src="assets/img/walle.jpg" data-thumb="assets/img/walle.jpg" alt="" data-transition="slideInLeft" />
-                <img src="assets/img/nemo.jpg" data-thumb="assets/img/nemo.jpg" alt="" title="#htmlcaption" />
-            </div>
-            <div id="htmlcaption" class="nivo-html-caption">
-                <strong>This</strong> is an example of a <em>HTML</em> caption with <a href="#">a link</a>. 
+                <img ng-repeat="slide in slides" src="{{slide}}" data-thumb="{{slide}}">
             </div>
         </div>
 
-    </div>
+  </div>
   <div class="container" >
     <h1>Minority Engineering Graduate Association</h1>
     <p>
@@ -70,4 +64,5 @@
     </div>
   </div>
 </div>
+
 

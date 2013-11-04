@@ -20,6 +20,8 @@
     <link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
 
     <link rel="stylesheet" type="text/css" href="assets/css/simplex/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/nivo-slider/nivo-slider.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/nivo-slider/themes/default/default.css">
 
     <!-- compiled CSS --><% styles.forEach( function ( file ) { %>
     <link rel="stylesheet" type="text/css" href="<%= file %>" /><% }); %>
@@ -36,6 +38,14 @@
     <style type="text/css">
       .nav, .pagination, .carousel a { 
         cursor: pointer; 
+      }
+
+      .theme-default .nivoSlider img {
+        position:absolute;
+        top:0px;
+        left:0px;
+        display:none;
+        height: 300px !important;
       }
     </style>
   </head>

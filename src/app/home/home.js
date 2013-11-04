@@ -40,6 +40,7 @@ angular.module( 'megaApp.home', [
 * And of course we define a controller for our route.
 */
 .controller( 'HomeCtrl', function HomeController( $scope, $http) {
+    
     /*
     We are going to set up our http requests here
     */
