@@ -41,14 +41,14 @@ The directory structure will be modularized via features.  As such the directory
    
 ###<div id="automated_grunt">1.1 Automated Tasks with Grunt - The Friendly Task Runner</div>
 
-I'll be an amazing task runner called Grunt.js to do a few automated tasks. The most important tasks include:
+I'll be using an amazing task runner called Grunt.js to do a few automated tasks. The most important tasks include:
 
 - Compilation
 - Running Karma Tests
 
 ####Karma Tests
 
-While I'm writing this website, I want to heavily test each feature/page/template I add to it.  Karma is a test harness that's gonna allow me to write tests using [Jasmine](http://pivotal.github.io/jasmine/). We'll have 
+While I'm writing this website, I want to heavily test each feature/page/template I add to it.  Karma is a test harness that's gonna allow me to write tests using [Jasmine](http://pivotal.github.io/jasmine/). 
 
 ####Compilation
 When I've written all of the html, templates, css/less and I want to push to the production stage server, I can simply call `grunt compile` from my shell to condense the code to a single page app with this structure:
@@ -63,7 +63,7 @@ The contents of the `bin` directory will reside in the `public_html` on the serv
 
 ###<div id="code_structure">1.2 My Code Structure</div>
 
-The source is where MEGA code (html, js, less, css).  The structure below is fairly self explanatory, but for clarity, the 'app' dir will contain all of my code.   
+The source (`src/`) directory is where MEGA code (html, js, less, css) will reside.  The structure below is fairly self explanatory, but for clarity, the 'app' dir will contain all of my code.   
   
     |- src/
     |  |- app/
