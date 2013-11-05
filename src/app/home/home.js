@@ -37,9 +37,20 @@ angular.module( 'megaApp.home', [
 })
 
 /**
+* Let's add a directive to bind our carousel to the page
+*/
+
+.directive( 'sliderDirective', function SliderDirective ($document) {
+    return function (scope, element, attr) {
+        
+        element.nivoSlider();
+    };
+})
+
+/**
 * And of course we define a controller for our route.
 */
-.controller( 'HomeCtrl', function HomeController( $scope, $http) {
+.controller( 'HomeCtrl', function HomeController( $scope, $http, $window, $document) {
     
     /*
     We are going to set up our http requests here
@@ -53,7 +64,22 @@ angular.module( 'megaApp.home', [
         a server for that
     */
     // $http.get(url).success(successCallback).error();
-    
+    // var el = $document.getElementById("slider");
+    // var el = angular.element("slider");
+    // var arr = [];
+    // for (var n=0, attrs=el.attributes, l=attrs.length; n<l; n++){
+    //     arr.push(attrs.item(n).nodeName);
+    //     console.log("Attribute name" + arr[n]);
+    // }
+
+    var element = $("div[id='slider']");
+    $(element[0].attributes).each(function() {
+    console.log(this.nodeName+':'+this.nodeValue);});
+    $(element[0]).nivoSlider();
+
+    // $window.load(function () {
+        
+    // })
     $scope.slideDuration = 5000;
     var slides = $scope.slides = [];
     for (var i = 2; i >= 1; i--) {

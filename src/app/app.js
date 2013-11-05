@@ -25,7 +25,7 @@ angular.module( 'megaApp', [
         // $(window).load(function() {
           window.alert("changed success at home");
           // window.re
-          $('#slider').nivoSlider();
+          // $('#slider').nivoSlider();
         // });
 
       }
