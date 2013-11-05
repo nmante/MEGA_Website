@@ -68,7 +68,8 @@ module.exports = {
       'vendor/angular-ui-router/release/angular-ui-router.js',
       'vendor/angular-ui-utils/modules/route/route.js',
       'vendor/jquery/jquery.min.js',
-      'vendor/nivo-slider/jquery.nivo.slider.js'
+      'vendor/nivo-slider/jquery.nivo.slider.js',
+      'vendor/angular-animate/angular-animate.js'
     ],
     css: [
     ],

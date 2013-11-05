@@ -15,7 +15,8 @@
 angular.module( 'megaApp.home', [
     'ui.state',
     'ui.bootstrap',
-    'plusOne'
+    'plusOne',
+    'ngAnimate'
 ])
 
 /**
@@ -42,7 +43,7 @@ angular.module( 'megaApp.home', [
 
 .directive( 'sliderDirective', function SliderDirective ($document) {
     return function (scope, element, attr) {
-        
+
         element.nivoSlider();
     };
 })
@@ -64,27 +65,37 @@ angular.module( 'megaApp.home', [
         a server for that
     */
     // $http.get(url).success(successCallback).error();
-    // var el = $document.getElementById("slider");
-    // var el = angular.element("slider");
-    // var arr = [];
-    // for (var n=0, attrs=el.attributes, l=attrs.length; n<l; n++){
-    //     arr.push(attrs.item(n).nodeName);
-    //     console.log("Attribute name" + arr[n]);
-    // }
+    
 
-    var element = $("div[id='slider']");
-    $(element[0].attributes).each(function() {
-    console.log(this.nodeName+':'+this.nodeValue);});
-    $(element[0]).nivoSlider();
+    // var element = $("div[id='slider']");
+    // $(element[0].attributes).each(function() {
+    // console.log(this.nodeName+':'+this.nodeValue);});
+    // $(element[0]).nivoSlider();
 
-    // $window.load(function () {
-        
-    // })
+       
     $scope.slideDuration = 5000;
     var slides = $scope.slides = [];
     for (var i = 2; i >= 1; i--) {
         slides.push('assets/img/img'+ i + '.png');  
     }
+
+    $scope.currentIndex = 0;
+
+    $scope.setCurrentSlideIndex = function (index) {
+        $scope.currentIndex = index;
+    };
+
+    $scope.isCurrentSlideIndex = function (index) {
+        return $scope.currentIndex === index;
+    };
+
+    $scope.prevSlide = function () {
+        $scope.currentIndex = ($scope.currentIndex < $scope.slides.length - 1) ? ++$scope.currentIndex : 0;
+    };
+
+    $scope.nextSlide = function () {
+        $scope.currentIndex = ($scope.currentIndex > 0) ? --$scope.currentIndex : $scope.slides.length - 1;
+    };
 
     $scope.mission = {
         "title" : "Mission",
@@ -133,5 +144,29 @@ angular.module( 'megaApp.home', [
     }
     ];
 
+})
+
+.animation('.slide-animation', function () {
+    return {
+        addClass: function (element, className, done) {
+            if (className == 'ng-hide') {
+                TweenMax.to(element, 0.5, {left: -element.parent().width(), onComplete: done });                    
+            }
+            else {
+                done();
+            }
+        },
+        removeClass: function (element, className, done) {
+            if (className == 'ng-hide') {
+                element.removeClass('ng-hide');
+
+                TweenMax.set(element, { left: element.parent().width() });
+                TweenMax.to(element, 0.5, {left: 0, onComplete: done });
+            }
+            else {
+                done();
+            }
+        }
+    };
 });
 
