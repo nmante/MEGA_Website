@@ -69,7 +69,12 @@ module.exports = {
       'vendor/angular-ui-utils/modules/route/route.js',
       'vendor/jquery/jquery.min.js',
       'vendor/nivo-slider/jquery.nivo.slider.js',
-      'vendor/angular-animate/angular-animate.js'
+      'vendor/angular-animate/angular-animate.js',
+      'vendor/angular-touch/angular-touch.js',
+      'vendor/angular-sanitize/angular-sanitize.js',
+      'vendor/bootstrap/js/bootstrap-transition.js',
+      'vendor/bootstrap/js/bootstrap-collapse.js',
+      'vendor/bootstrap/js/bootstrap-dropdown.js'
     ],
     css: [
     ],

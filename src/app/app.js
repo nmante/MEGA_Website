@@ -5,7 +5,8 @@ angular.module( 'megaApp', [
   'megaApp.events',
   'megaApp.eboard',
   'ui.state',
-  'ui.route'
+  'ui.route',
+  'ui.bootstrap'
 ])
 
 .config( function myAppConfig ( $stateProvider, $urlRouterProvider ) {
@@ -19,23 +20,7 @@ angular.module( 'megaApp', [
   $scope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams){
     if ( angular.isDefined( toState.data.pageTitle ) ) {
       $scope.pageTitle = toState.data.pageTitle + ' | MEGA' ;
-      if (toState.data.pageTitle == "Home") {
-        // var slider = angular.element(document.getElementById('slider'));
-        // slider.nivoSlider();
-        // $(window).load(function() {
-          window.alert("changed success at home");
-          // window.re
-          // $('#slider').nivoSlider();
-        // });
-
-      }
     }
-
-
-
-    // $(window).load(function() {
-    //     $('#slider').nivoSlider();
-    // });
     
   });
 

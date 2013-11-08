@@ -41,4 +41,6 @@ angular.module( 'megaApp.eboard', [
 */
 .controller( 'EboardCtrl', function EboardController( $scope, $http) {
 
+    
+
 });

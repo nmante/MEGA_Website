@@ -3,14 +3,116 @@
     background-color: #000000;
 }*/
 
+/* The border radius/curvature for our slider/carousel */
+@cornerRadius: 5px;
+@sliderBackgroundColor: #800000; 
+.auto-size (@width: 45%) {
+    height: @width * 4 / 3;
+}
+
 .slider {
-    width: 800px;
-    height: 400px;
+    width: 45%;
+    /*height: 200px;*/
+
+
+    /* Smartphones (portrait and landscape) ----------- */
+    /*@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    
+        width: ;
+        height: 240px;
+    }*/
+
     overflow: hidden;
     position: relative;
     background: #e6e6e6;
-    border: 20px solid #FFF;
+    /*background: #800000;*/
+    border: 5px solid @sliderBackgroundColor;
+    border-radius: @cornerRadius;
     margin-top: 20px;
+    box-shadow: -10px 10px 20px #888888;
+    webkit-box-shadow: -10px 10px 20px #888888;
+    moz-box-shadow: -10px 10px 20px #888888;
+
+
+    /* 
+        Let's make our image slider responsive, by using media queries.
+
+        The key here is to realize that any attribute with 'device' in it allows us to check the devices browswers width/height.  
+
+        Any attribute without the 'device' keyword only checks the browser width.  So on a desktop if we we're to resize, and not have a property which checks for smaller pixel widths (i.e 450px), then the height won't be set properly.
+    */
+
+    /* Smartphones (portrait) ----------- */
+    @media only screen and (max-width : 320px) {
+    /* Styles */
+        width: 100%;
+        height: 160px;
+        border: 0px;
+        border-radius: 0px;
+        margin-bottom: 0px;
+    }
+    
+    /* Smartphones (landscape) ----------- */
+    @media only screen and (min-width : 321px) and (max-width : 480px) {
+    /* Styles */
+        width: 320px;
+        height: 160px;
+        margin-bottom: 0px;
+        padding-bottom: 0px;
+    }
+
+    /*@media only screen and (min-width : 481px) and (max-width : 767px){
+        width: 500px;
+        height: 250px;
+    }*/
+
+    /* iPads (portrait and landscape) ----------- */
+    @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+    /* Styles */
+        width: 500px;
+        height: 250px;
+
+    }
+
+    /* iPads (landscape) ----------- */
+    @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+    /* Styles */
+        width: 600px;
+        height: 300px;
+    }
+
+    /* iPads (portrait) ----------- */
+    @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+        width: 600px;
+        height: 300px;   
+    }
+
+
+
+    @media only screen and (min-width: 481px) and (max-width: 768px){
+        width: 480px;
+        height: 240px;
+    }
+
+    /* Desktops and laptops */
+    @media only screen and (min-width : 769px){
+        width: 600px;
+        height: 300px;
+    }
+
+    /* Desktops and laptops ----------- */
+    @media only screen and (min-width : 1224px) {
+    /* Styles */
+        width: 700px;
+        height: 350px;
+    }
+
+    /* Large screens ----------- */
+    @media only screen and (min-width : 1824px) {
+    /* Styles */
+        width: 1200px;
+        height: 600px;
+    }
 }
 
 .slide {
@@ -31,31 +133,31 @@
     height: 71px;
     outline: none;
     cursor: pointer;
-    background: url(../assets/img/blank.gif) no-repeat;
+    /*background: url(../assets/img/blank.gif) no-repeat;*/
 }
 
 .arrow.prev {
     opacity: 0.2;
     left: 20px;
-    background-image: url(../assets/img/paddle_prev_999.png);
+    /*background-image: url(../assets/img/paddle_prev_999.png);*/
     transition: 0.2s linear all;
 }
 
 .arrow.next {
     opacity: 0.2;
     right: 20px;
-    background-image: url(../assets/img/paddle_next_999.png);
+    /*background-image: url(../assets/img/paddle_next_999.png);*/
     transition: 0.2s linear all;
 }
 
 .arrow.prev:hover {
     opacity: 1;
-    background-image: url(../assets/img/paddle_prev_fff.png);
+    /*background-image: url(../assets/img/paddle_prev_fff.png);*/
 }
 
 .arrow.next:hover {
     opacity: 1;
-    background-image: url(../assets/img/paddle_next_fff.png);
+    /*background-image: url(../assets/img/paddle_next_fff.png);*/
 }
 
 
@@ -97,7 +199,7 @@ navSlide
 
 .dots .dot {
     position: relative;
-    margin: 0 8px;
+    margin: -5px 5px 5px 5px;
     width: 12px;
     height: 12px;
 }

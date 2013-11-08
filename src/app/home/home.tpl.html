@@ -1,52 +1,35 @@
-<header class="jumbotron jumbotron-bg">
-  <!-- <div id="wrapper">
-        <div class="slider-wrapper theme-default">
-            <div id="slider" class="nivoSlider">
-                <img ng-repeat="slide in slides" ng-src="{{slide}}" data-thumb="{{slide}}">
-            </div>
-        </div>
-
-  </div> -->
+<header class="jumbotron">
+  
+  <div class="container">
+    <h1>Minority Engineering Graduate Association</h1>
+  </div>
   <div class="container slider">
-    <img ng-repeat="slide in slides" class="slide slide-animation" ng-hide="!isCurrentSlideIndex($index)" ng-src="{{slide}}">
 
-    <a class="arrow prev" href="#" ng-click="nextSlide()"></a>
-    <a class="arrow next" href="#" ng-click="prevSlide()"></a>
+    <img ng-repeat="slide in slides" class="slide slide-animation nonDraggableImage" ng-hide="!isCurrentSlideIndex($index)" ng-src="{{slide}}">
+
+    <a class="arrow prev" href="#" ng-click="nextSlide()"><i class="icon-arrow-left"></i></a>
+    <a class="arrow next" href="#" ng-click="prevSlide()"><i class="icon-arrow-right"></i></a>
 
     <nav class="navSlide">
-        <div class="wrapper">
-            <ul class="dots">
-                <li class="dot" ng-repeat="slide in slides">
-                    <a href="#" ng-class="{'active':isCurrentSlideIndex($index)}"
-                      ng-click="setCurrentSlideIndex($index);">h<!-- {{slide.description}} --></a></li>
-            </ul>
-        </div>
+      <div class="wrapper">
+        <ul class="dots">
+          <li class="dot" ng-repeat="slide in slides">
+            <a href="#" ng-class="{'active':isCurrentSlideIndex($index)}" ng-click="setCurrentSlideIndex($index);">
+            </a>
+          </li>
+        </ul>
+      </div>
     </nav>
-  </div>
-  <div class="container" >
-    <h1>Minority Engineering Graduate Association</h1>
-    <p>
-      Empowering the Environment.
-    </p>
-    
   </div>
 </header>
 <div class="container">
-  <div class="row">
-    <div class="col-lg-4">
-    </div>
-    <div class="col-lg-4" style="text-align:center;">
-      <img id="logo" src="assets/img/megalogo.png">
-    </div>
-    <div class="col-lg-4">
-    </div>
-  </div>
+  <!-- The first row containing the Benefits, Mission and Contact sections -->
   <div class="row-fluid">
     <div class="col-lg-4 col-sm-4 col-md-4 section">
       <ul>
         <h2>{{mission.title}}</h2>
-        <li>
-          <p class="fulljusttify">{{mission.story}}</p>
+        <li ng-repeat="point in mission.points">
+          <p ng-bind-html="point"></p>
         </li>
       </ul>
     </div>
@@ -54,29 +37,39 @@
       <ul>
         <h2>Benefits</h2>
         <li>
-          <p><b><i>MEGA</i></b> provides an opportunity to interact with other Minority Groups like: 
-            <ul>
-              <li ng-repeat="society in societies">
-                <a href="{{society.link}}">{{society.name}}</a>
-              </li>
-              <li>... And many more!!</li>
-            </ul>
+          <p>
+            We also provide opportunities to interact with other Minority Groups like: 
+          
+              <span ng-repeat="society in societies">
+                <a href="{{society.link}}">{{society.name}}</a>, 
+              </span> and many more!!
+            
           </p>
         </li>
-        <p ng-repeat="benefit in benefits">
-          {{benefit}}
-        </p>
+        <li ng-repeat="benefit in benefits" >
+          <p ng-bind-html="benefit"></p>
+        </li>
       </ul>
     </div>
     <div class="col-lg-4 col-sm-4 col-md-4 section">
       <ul>
-        <h2>The last one</h2>
-        <li>
-          <p>
-            And a bullet point
-          </p>
+        <h2>Membership</h2>
+        <li ng-repeat="bullet in membershipBullets">
+          <p ng-bind-html="bullet"></p>
         </li>
       </ul>
+    </div>
+  </div>
+
+</div>
+<div class="container">
+  <div class="row-fluid sponsorDiv">
+    <h1>Sponsors</h1>
+    <div class="col-lg-2 col-sm-4 col-md-4 col-xs-4 section" ng-repeat="sponsor in sponsors">
+      <a class="sponsorLink" target="_blank" border="0" href="{{sponsor.website}}">
+        <img class="sponsorLogo" ng-src="{{sponsor.icon}}">
+      </a>
+      <br>
     </div>
   </div>
 </div>
