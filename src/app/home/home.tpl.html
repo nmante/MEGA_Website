@@ -1,10 +1,10 @@
 <header class="jumbotron">
   
+  
   <div class="container">
     <h1>Minority Engineering Graduate Association</h1>
   </div>
   <div class="container slider">
-
     <img ng-repeat="slide in slides" class="slide slide-animation nonDraggableImage" ng-hide="!isCurrentSlideIndex($index)" ng-src="{{slide}}">
 
     <a class="arrow prev" href="#" ng-click="nextSlide()"><i class="icon-arrow-left"></i></a>
@@ -22,21 +22,22 @@
     </nav>
   </div>
 </header>
-<div class="container">
+<div class="container" text-align="center">
   <!-- The first row containing the Benefits, Mission and Contact sections -->
   <div class="row-fluid">
     <div class="col-lg-4 col-sm-4 col-md-4 section">
       <ul>
         <h2>{{mission.title}}</h2>
-        <li ng-repeat="point in mission.points">
-          <p ng-bind-html="point"></p>
-        </li>
+        <!-- <li ng-repeat="point in mission.points"> -->
+
+          <p ng-repeat="point in mission.points" ng-bind-html="point"></p>
+        <!-- </li> -->
       </ul>
     </div>
     <div class="col-lg-4 col-sm-4 col-md-4 section">
       <ul>
         <h2>Benefits</h2>
-        <li>
+        <!-- <li> -->
           <p>
             We also provide opportunities to interact with other Minority Groups like: 
           
@@ -44,19 +45,19 @@
                 <a href="{{society.link}}">{{society.name}}</a>, 
               </span> and many more!!
             
-          </p>
+          <!-- </p> -->
         </li>
-        <li ng-repeat="benefit in benefits" >
-          <p ng-bind-html="benefit"></p>
-        </li>
+        <!-- <li ng-repeat="benefit in benefits" > -->
+          <p ng-repeat="benefit in benefits" ng-bind-html="benefit"></p>
+        <!-- </li> -->
       </ul>
     </div>
     <div class="col-lg-4 col-sm-4 col-md-4 section">
       <ul>
         <h2>Membership</h2>
-        <li ng-repeat="bullet in membershipBullets">
-          <p ng-bind-html="bullet"></p>
-        </li>
+        <!-- <li ng-repeat="bullet in membershipBullets"> -->
+          <p ng-repeat="bullet in membershipBullets" ng-bind-html="bullet"></p>
+        <!-- </li> -->
       </ul>
     </div>
   </div>
