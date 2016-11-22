@@ -48,7 +48,7 @@ I'll be using an amazing task runner called Grunt.js to do a few automated tasks
 
 ####Karma Tests
 
-While I'm writing this website, I want to heavily test each feature/page/template I add to it.  Karma is a test harness that's gonna allow me to write tests using [Jasmine](http://pivotal.github.io/jasmine/). 
+While I'm writing this website, I want to heavily test each feature/page/template I add to it.  Karma is a test harness that's gonna allow me to write tests using [Jasmine](https://jasmine.github.io/). 
 
 ####Compilation
 When I've written all of the html, templates, css/less and I want to push to the production stage server, I can simply call `grunt compile` from my shell to condense the code to a single page app with this structure:
